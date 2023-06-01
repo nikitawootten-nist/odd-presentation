@@ -1,0 +1,5 @@
+# official fedramp rev5 OSCAL baselines won't be released until the 15th (sorry!)
+*.xml
+*.json
+*.yaml
+*.yml

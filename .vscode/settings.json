@@ -1,0 +1,5 @@
+{
+    "markdown.marp.themes": [
+        "./support/csd-workshop2023.css"
+    ],
+}
