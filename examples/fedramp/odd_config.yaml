@@ -1,0 +1,24 @@
+leftPath: rev4/FedRAMP_rev4_HIGH-baseline-resolved-profile_catalog.json
+rightPath: rev5_DRAFT/FedRAMP_rev5_HIGH-baseline_profile-resolved-catalog-20230518173205574.json
+outputPath: comparison.json
+comparatorConfig:
+  "*":
+    ignoreCase: true
+    stringComparisonMethod: cosine
+    matcherGenerators:
+      - type: HungarianMatcherContainer
+    outOfTreeEnabled: true
+  uuid:
+    stringComparisonMethod: absolute
+  groups:
+    matcherGenerators:
+      - type: ObjectPropertyMatcherContainer
+        property: id
+  id:
+    ignoreCase: false
+    stringComparisonMethod: jaro-winkler
+outputConfigs:
+  - selection: controls
+    identifiers: ["id", "title"]
+    outputType: excel
+    outputPath: comparison_controls.xlsx
