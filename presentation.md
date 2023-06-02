@@ -4,15 +4,19 @@ title: "OSCAL Deep Diff Intro"
 author: Nikita Wootten
 theme: csd-workshop2023
 class: invert workshop
-footer: "![width:60px invert](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) OSCAL Deep Diff Introduction - FEDRAMP Data Bites 6/8/23"
+footer: "![height:25px](https://raw.githubusercontent.com/usnistgov/nist-header-footer/nist-pages/images/nist_logo_brand_white.svg) OSCAL Deep Diff Introduction"
 paginate: true
 ---
 
-<!-- _paginate: false -->
+<!-- 
+_paginate: false
+_class: invert workshop radialbg
+-->
 
 # OSCAL "Deep Diff" Introduction
 
 ---
+
 
 ## The problem: Large documents are difficult to digest
 
@@ -25,7 +29,7 @@ OSCAL catalogs are no exception!
 ---
 
 <!--
-_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_footer: "![height:25px invert](https://raw.githubusercontent.com/usnistgov/nist-header-footer/nist-pages/images/nist_logo_brand_white.svg) OSCAL Deep Diff Introduction"
 _class: workshop
 -->
 
@@ -41,7 +45,7 @@ _class: workshop
 ---
 
 <!--
-_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_footer: "![height:25px invert](https://raw.githubusercontent.com/usnistgov/nist-header-footer/nist-pages/images/nist_logo_brand_white.svg) OSCAL Deep Diff Introduction"
 _class: workshop
 -->
 
@@ -55,6 +59,10 @@ _class: workshop
 ![bg right 100%](./support/screenshot_gh_odd_repocard.png)
 
 ---
+
+<!--
+_class: invert workshop radialbg
+-->
 
 # Scenario: a basic comparison
 
@@ -90,6 +98,10 @@ The tool can be configured to change the comparison behavior:
 
 ---
 
+<!--
+_class: invert workshop radialbg
+-->
+
 # Scenario: tailoring a catalog comparison
 
 ---
@@ -109,6 +121,10 @@ An example of object promotion/demotion would be an enhancement becoming a contr
 -->
 
 ---
+
+<!--
+_class: invert workshop radialbg
+-->
 
 ## Call to action
 
