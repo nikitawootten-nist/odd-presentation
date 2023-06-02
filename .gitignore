@@ -1,3 +1,5 @@
 *.html
 *.pdf
 node_modules
+examples/**/comparison.json
+examples/**/*.xlsx

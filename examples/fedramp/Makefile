@@ -1,2 +1,2 @@
 build:
-	oscal-deep-diff --config odd_config.yaml
+	oscal-deep-diff --config config.yaml
