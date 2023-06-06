@@ -24,7 +24,7 @@ MARP_FLAGS:=--allow-local-files --theme-set $(SUPPORT_DIR)/csd-workshop2023.css
 	npx @marp-team/marp-cli -o $*.html $(MARP_FLAGS) -- $*.md
 
 .PHONY: presentations-html
-presentations-html: presentation.html
+presentations-html: presentation.html ## Export all presentations to HTML
 	@echo Generated presentation HTML...
 
 
