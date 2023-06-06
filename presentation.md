@@ -8,18 +8,17 @@ footer: "![height:25px](https://raw.githubusercontent.com/usnistgov/nist-header-
 paginate: true
 ---
 
-<!-- 
+<!--
 _paginate: false
 _class: invert workshop radialbg
 -->
 
 # OSCAL "Deep Diff" Introduction
-#### Nikita Wootten
+#### Nikita Wootten (Computer Scientist @ NIST ITL)
 
 ---
 
-
-## The problem: **Large documents are difficult to digest**
+## The problem: **large documents are difficult to digest**
 
 OSCAL catalogs are no exception!
 
@@ -207,9 +206,9 @@ comparatorConfig:
 
 ---
 
-### Appendix A.iii: Conclusion
+### Appendix A.iii: conclusion
 
-In this appendix we've shown:
+In this appendix we've explored:
 * How to use the `oscal-deep-diff` CLI tool to compare revisions of a basic document
 * How to tailor the comparison to ignore `UUID` values
 
@@ -217,10 +216,64 @@ In this appendix we've shown:
 
 ---
 
-## Appendix B: Tailoring a catalog comparison
+## Appendix B: tailoring a catalog comparison
+
+```yaml
+comparatorConfig:
+  "*": # The "*" pattern serves sets the default behavior for all objects
+    ignoreCase: true
+    stringComparisonMethod: cosine
+    matcherGenerators: # Control how array items are matched
+      # The Hungarian algorithm is the most intensive matching method
+      - type: HungarianMatcherContainer
+    # "out of tree" matching allows array items to move from one parent to another
+    outOfTreeEnabled: true
+  uuid:
+    stringComparisonMethod: absolute # Later defined matches can override settings
+  groups:
+    matcherGenerators:
+      # Some matcher generators can constrain how matching happens
+      - type: ObjectPropertyMatcherContainer
+        property: id
+  id:
+    # Jaro-Winkler comparison weights earlier letters as more significant, e.g.:
+    # "ac-8" & "ac-7" are more similar than "ac-8" & "au-8"
+    stringComparisonMethod: jaro-winkler
+```
+
+---
+
+### Appendix B.i: exporting an Excel document for analysis
+
+For larger documents, the JSON comparison may not be suitable for human analysis.
+
+```yaml
+outputConfigs:
+  - selection: controls
+    identifiers: ["id", "title"]
+    outputType: excel
+    outputPath: comparison_controls.xlsx
+```
+
+This configuration produces:
+- A filterable breakdown of all `controls` objects in the compared documents
+  - What controls have been `added`, `removed`, `changed`, or `ok`
+  - A more detailed list of changes for a given control
+  - The parent (`group`/`control`) that a control belongs to
+
+---
+
+### Appendix B.ii: exporting an Excel document for analysis (continued)
+
+![Screenshot of an exported FedRAMP rev4/rev5 comparison](./support/screenshot_appendix-b.ii.png)
 
 ---
 
 ### Appendix B.?: Conclusion
+
+In this appendix we've explored:
+* Comparing revisions of the FedRAMP resolved control catalog
+* The different ways that comparisons can be tailored
+* How to export an Excel document for analysis
 
 [⏮️ Back to the slides](#scenario-tailoring-a-catalog-comparison)
