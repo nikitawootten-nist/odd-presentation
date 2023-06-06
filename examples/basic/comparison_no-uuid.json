@@ -1,0 +1,141 @@
+{
+  "leftDocument": "old.json",
+  "rightDocument": "new.json",
+  "changes": [
+    {
+      "change": "property_changed",
+      "leftPointer": "/component-definition/metadata/title",
+      "leftElement": "Test Component Definition",
+      "rightPointer": "/component-definition/metadata/title",
+      "rightElement": "ACMECorp Component Definition"
+    },
+    {
+      "change": "array_changed",
+      "leftPointer": "/component-definition/metadata/parties",
+      "rightPointer": "/component-definition/metadata/parties",
+      "rightOnly": [],
+      "leftOnly": [],
+      "subChanges": [
+        {
+          "leftPointer": "/component-definition/metadata/parties/0",
+          "rightPointer": "/component-definition/metadata/parties/0",
+          "changes": [
+            {
+              "change": "property_changed",
+              "leftPointer": "/component-definition/metadata/parties/0/name",
+              "leftElement": "Test Vendor",
+              "rightPointer": "/component-definition/metadata/parties/0/name",
+              "rightElement": "ACMECorp"
+            }
+          ],
+          "score": 2
+        }
+      ],
+      "outOfTreeChanges": []
+    },
+    {
+      "change": "array_changed",
+      "leftPointer": "/component-definition/components",
+      "rightPointer": "/component-definition/components",
+      "rightOnly": [],
+      "leftOnly": [],
+      "subChanges": [
+        {
+          "leftPointer": "/component-definition/components/0",
+          "rightPointer": "/component-definition/components/0",
+          "changes": [
+            {
+              "change": "property_changed",
+              "leftPointer": "/component-definition/components/0/title",
+              "leftElement": "test component 1",
+              "rightPointer": "/component-definition/components/0/title",
+              "rightElement": "ACMECorp Component 1"
+            },
+            {
+              "change": "array_changed",
+              "leftPointer": "/component-definition/components/0/responsible-roles",
+              "rightPointer": "/component-definition/components/0/responsible-roles",
+              "rightOnly": [],
+              "leftOnly": [],
+              "subChanges": [
+                {
+                  "leftPointer": "/component-definition/components/0/responsible-roles/0",
+                  "rightPointer": "/component-definition/components/0/responsible-roles/0",
+                  "changes": [],
+                  "score": 0
+                }
+              ],
+              "outOfTreeChanges": []
+            },
+            {
+              "change": "array_changed",
+              "leftPointer": "/component-definition/components/0/control-implementations",
+              "rightPointer": "/component-definition/components/0/control-implementations",
+              "rightOnly": [],
+              "leftOnly": [],
+              "subChanges": [
+                {
+                  "leftPointer": "/component-definition/components/0/control-implementations/0",
+                  "rightPointer": "/component-definition/components/0/control-implementations/0",
+                  "changes": [
+                    {
+                      "change": "property_changed",
+                      "leftPointer": "/component-definition/components/0/control-implementations/0/source",
+                      "leftElement": "../../../nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_catalog.json",
+                      "rightPointer": "/component-definition/components/0/control-implementations/0/source",
+                      "rightElement": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev4/xml/NIST_SP-800-53_rev4_catalog.xml"
+                    },
+                    {
+                      "change": "array_changed",
+                      "leftPointer": "/component-definition/components/0/control-implementations/0/implemented-requirements",
+                      "rightPointer": "/component-definition/components/0/control-implementations/0/implemented-requirements",
+                      "rightOnly": [],
+                      "leftOnly": [],
+                      "subChanges": [
+                        {
+                          "leftPointer": "/component-definition/components/0/control-implementations/0/implemented-requirements/0",
+                          "rightPointer": "/component-definition/components/0/control-implementations/0/implemented-requirements/0",
+                          "changes": [],
+                          "score": 0
+                        }
+                      ],
+                      "outOfTreeChanges": []
+                    }
+                  ],
+                  "score": 2
+                },
+                {
+                  "leftPointer": "/component-definition/components/0/control-implementations/1",
+                  "rightPointer": "/component-definition/components/0/control-implementations/1",
+                  "changes": [
+                    {
+                      "change": "array_changed",
+                      "leftPointer": "/component-definition/components/0/control-implementations/1/implemented-requirements",
+                      "rightPointer": "/component-definition/components/0/control-implementations/1/implemented-requirements",
+                      "rightOnly": [],
+                      "leftOnly": [],
+                      "subChanges": [
+                        {
+                          "leftPointer": "/component-definition/components/0/control-implementations/1/implemented-requirements/0",
+                          "rightPointer": "/component-definition/components/0/control-implementations/1/implemented-requirements/0",
+                          "changes": [],
+                          "score": 0
+                        }
+                      ],
+                      "outOfTreeChanges": []
+                    }
+                  ],
+                  "score": 0
+                }
+              ],
+              "outOfTreeChanges": []
+            }
+          ],
+          "score": 4
+        }
+      ],
+      "outOfTreeChanges": []
+    }
+  ],
+  "score": 8
+}

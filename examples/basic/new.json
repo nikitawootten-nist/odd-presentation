@@ -16,9 +16,9 @@
         },
         "components": [
             {
-                "uuid": "b036a6ac-6cff-4066-92bc-74ddfd9ad6fa",
+                "uuid": "2ad1091c-2c9b-4123-953b-dc7d22be6439",
                 "type": "software",
-                "title": "test component 1",
+                "title": "ACMECorp Component 1",
                 "description": "This is a software component that implements basic authentication mechanisms.",
                 "responsible-roles": [
                     {
@@ -30,24 +30,24 @@
                 ],
                 "control-implementations": [
                     {
-                        "uuid": "cfcdd674-8595-4f98-a9d1-3ac70825c49f",
-                        "source": "../../../nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_catalog.json",
+                        "uuid": "85fc2969-c342-479f-a2d1-2635c29c7ebe",
+                        "source": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev4/xml/NIST_SP-800-53_rev4_catalog.xml",
                         "description": "This is a partial implementation of the SP 800-53 rev4 catalog, focusing on the control enhancement AC-2 (3).",
                         "implemented-requirements": [
                             {
-                                "uuid": "d1016df0-9b5c-4839-86cd-f9c1d113077b",
+                                "uuid": "a4eaa949-01e4-45a1-989a-4f7d550f5f00",
                                 "description": "Inactive accounts are automatically disabled based on the duration specified by the duration parameter. Disabled accounts are expected to be reviewed and removed when appropriate.",
                                 "control-id": "ac-2.3"
                             }
                         ]
                     },
                     {
-                        "uuid": "22dbff65-9729-449f-9dfc-4e5fee0906de",
+                        "uuid": "c532de30-e689-4199-96fa-ee4e902d066d",
                         "source": "https://raw.githubusercontent.com/GSA/fedramp-automation/master/baselines/rev4/json/FedRAMP_rev4_HIGH-baseline_profile.json",
                         "description": "This is a partial implementation of the FedRAMP High profile, focusing on the control enhancement AC-2 (3).",
                         "implemented-requirements": [
                             {
-                                "uuid": "65e30b37-0640-4844-9f42-b2a7ae944bb1",
+                                "uuid": "d69f05f9-0d19-4a90-9067-30a802a49a57",
                                 "description": "An alternate narrative for FedRAMP..",
                                 "control-id": "ac-2.3"
                             }

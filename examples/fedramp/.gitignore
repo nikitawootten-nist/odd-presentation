@@ -1,0 +1,3 @@
+# Ignoring comparison since rev5 has not been released yet
+*comparison.json
+*.xlsx

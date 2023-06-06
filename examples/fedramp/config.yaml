@@ -1,23 +1,33 @@
+# left, right and output paths can be specified in the config
 leftPath: rev4/FedRAMP_rev4_HIGH-baseline-resolved-profile_catalog.json
 rightPath: rev5_DRAFT/FedRAMP_rev5_HIGH-baseline_profile-resolved-catalog-20230518173205574.json
 outputPath: comparison.json
 comparatorConfig:
+  # The "*" pattern serves sets the default behavior for all objects
   "*":
     ignoreCase: true
     stringComparisonMethod: cosine
+    # Control how array items are matched
     matcherGenerators:
+      # The Hungarian algorithm is the most intensive matching method
       - type: HungarianMatcherContainer
+    # "out of tree" matching allows array items to move from one parent to another (e.g. controls moving families)
     outOfTreeEnabled: true
   uuid:
+    # Later defined matches can override settings
     stringComparisonMethod: absolute
   groups:
     matcherGenerators:
+      # Some matcher generators can constrain how matching happens (e.g. we know group names do not change between revisions)
       - type: ObjectPropertyMatcherContainer
         property: id
   id:
     ignoreCase: false
+    # Jaro-Winkler comparison weights earlier letters as more significant, e.g.:
+    # "ac-8" & "ac-7" are more similar than "ac-8" & "au-8"
     stringComparisonMethod: jaro-winkler
 outputConfigs:
+  # Generate an output excel spreadsheet
   - selection: controls
     identifiers: ["id", "title"]
     outputType: excel

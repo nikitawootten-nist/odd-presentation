@@ -1,0 +1,6 @@
+comparatorConfig:
+  # Omit UUID changes from comparisons:
+  "*":
+    ignore:
+      - uuid
+      - "*uuid*"
