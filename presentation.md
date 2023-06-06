@@ -14,11 +14,12 @@ _class: invert workshop radialbg
 -->
 
 # OSCAL "Deep Diff" Introduction
+#### Nikita Wootten
 
 ---
 
 
-## The problem: Large documents are difficult to digest
+## The problem: **Large documents are difficult to digest**
 
 OSCAL catalogs are no exception!
 
@@ -66,6 +67,8 @@ _class: invert workshop radialbg
 
 # Scenario: a basic comparison
 
+[🔗 Appendix Slides](#appendix-a-a-basic-comparison)
+
 ---
 
 ## Output format
@@ -104,6 +107,8 @@ _class: invert workshop radialbg
 
 # Scenario: tailoring a catalog comparison
 
+[🔗 Appendix Slides](#appendix-b-tailoring-a-catalog-comparison)
+
 ---
 
 ## Shortcomings
@@ -134,3 +139,88 @@ If this tool is exciting or potentially useful to you:
     https://github.com/usnistgov/oscal-deep-diff
 
 ![bg right 50%](https://imgs.xkcd.com/comics/data_trap.png)
+
+---
+
+# 📚 Appendices
+
+- [A](#appendix-a-a-basic-comparison): a basic comparison
+- [B](#appendix-b-tailoring-a-catalog-comparison): tailoring a catalog comparison
+
+---
+
+## Appendix A: a basic comparison
+
+* O.D.D. can be invoked from the command line using the `oscal-deep-diff` command.
+* O.D.D. requires a configuration file, which at minimum looks like:
+
+    ```yaml
+    comparatorConfig: {}
+    ```
+* Let's compare two documents, `old.json` and `new.json`:
+
+    ```sh
+    $ oscal-deep-diff \
+		--leftPath old.json \
+		--rightPath new.json \
+		--outputPath comparison_basic.json \
+		--config config_comparison_basic.yaml
+    ```
+
+---
+
+### Appendix A.i: the output format
+
+```json
+{
+  "leftDocument": "old.json",
+  "rightDocument": "new.json",
+  "changes": [
+    {
+      // or property_left_only, property_right_only, array_changed
+      "change": "property_changed",
+      "leftPointer": "/component-definition/uuid",
+      "leftElement": "8223d65f-57a9-4689-8f06-2a975ae2ad72",
+      "rightPointer": "/component-definition/uuid",
+      "rightElement": "e49f18fa-b9dc-4131-9f56-7e9725e32f8c"
+    },
+    // ...
+  ]
+}
+```
+
+---
+
+### Appendix A.ii: customizing the output
+
+Let's say we want to ignore specific properties from our comparison:
+
+```yaml
+comparatorConfig:
+  # Omit UUID changes from comparisons:
+  "*":
+    ignore:
+      - uuid
+      - "*uuid*"
+
+```
+
+---
+
+### Appendix A.iii: Conclusion
+
+In this appendix we've shown:
+* How to use the `oscal-deep-diff` CLI tool to compare revisions of a basic document
+* How to tailor the comparison to ignore `UUID` values
+
+[⏮️ Back to the slides](#scenario-a-basic-comparison)
+
+---
+
+## Appendix B: Tailoring a catalog comparison
+
+---
+
+### Appendix B.?: Conclusion
+
+[⏮️ Back to the slides](#scenario-tailoring-a-catalog-comparison)
