@@ -1,0 +1,30 @@
+graph LR;
+    lr[Left Root]
+    lcat(catalog)
+    lmet(metadata)
+    ltitle(title: Rev4)
+    lac(ac)
+    lac1(ac-1)
+    lac2(ac-2)
+    lr-->lcat
+    lcat-->lmet
+    lmet-->ltitle
+    lcat-->lac
+    lac-.->lac1
+    lac-.->lac2
+
+    rr[Right Root]
+    rcat(catalog)
+    rmet(metadata)
+    rtitle(title: Rev5)
+    rac(ac)
+    rac1(ac-1)
+    rac2(ac-2)
+    rac3(ac-3)
+    rr-->rcat
+    rcat-->rmet
+    rmet-->rtitle
+    rcat-->rac
+    rac-.->rac1
+    rac-.->rac2
+    rac-.->rac3

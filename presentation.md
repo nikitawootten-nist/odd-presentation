@@ -14,7 +14,7 @@ _class: invert workshop radialbg
 -->
 
 # OSCAL "Deep Diff" Introduction
-#### Nikita Wootten (Computer Scientist @ NIST ITL)
+Nikita Wootten (Computer Scientist @ NIST ITL)
 
 ---
 
@@ -97,6 +97,23 @@ The tool can be configured to change the comparison behavior:
 - Specify how arrays should be matched and compared
 
 ...as well as the output format (JSON, Excel)
+
+---
+
+## Under the hood: how comparisons work
+
+* Document -> tree of `primitive`, `object`, and `array` nodes
+* Recursively compare nodes:
+  * For `objects`, find properties in common, and compare their children.
+  * For `arrays`, find pairs of array items that *minimize* the number of changes overall.
+
+![bg right 90%](./support/tree.svg)
+
+<!--
+The Hungarian (Munkres) algorithm is used to assign array pairs:
+- The algorithm is instructed to find pairs that minimize the "score"
+- Comparison behavior can be tweaked to ignore certain members
+-->
 
 ---
 
@@ -269,7 +286,7 @@ This configuration produces:
 
 ---
 
-### Appendix B.?: Conclusion
+### Appendix B.iii: Conclusion
 
 In this appendix we've explored:
 * Comparing revisions of the FedRAMP resolved control catalog
