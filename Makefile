@@ -17,7 +17,7 @@ help: ## Show this help message
 .PHONY: presentations
 presentations: presentations-html presentations-pdf ## Export all presentations to HTML and PDF
 
-MARP_FLAGS:=--allow-local-files --theme-set $(SUPPORT_DIR)/csd-workshop2023.css
+MARP_FLAGS:=--allow-local-files --theme-set support/csd-workshop2023.css
 
 # Export the given markdown presentation to html
 %.html: %.md node_modules support
